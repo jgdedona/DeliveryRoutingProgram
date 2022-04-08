@@ -2,7 +2,7 @@ import csv
 import Hash
 
 class Package:
-    def __init__(self, packageId, address, city, state, zip, deliveryDeadline, massKilo, notes, status):
+    def __init__(self, packageId, address, city, state, zip, deliveryDeadline, massKilo, notes, status, truck):
         self.packagId = packageId
         self.address = address
         self.city = city
@@ -12,11 +12,12 @@ class Package:
         self.massKilo = massKilo
         self.notes = notes
         self.status = status
+        self.truck = truck
 
     def __str__(self):
         return str(self.packagId + ', ' + self.address + ', ' + self.city + ', ' + self.state + ', '
                    + self.zip + ', ' + self.deliveryDeadline + ', ' + self.massKilo + ', ' + self.notes
-                   + ', ' + self.status)
+                   + ', ' + self.status + ', ' + self.truck)
 
 
 def create_package_hash(csv_file):
@@ -30,7 +31,7 @@ def create_package_hash(csv_file):
                 notes = 'None'
             else:
                 notes = row[7]
-            packageHash.insert(row[0], Package(row[0], row[1], row[2], row[3], row[4],
-                                                        row[5], row[6], notes, 'Unknown'))
-            print(packageHash.search(row[0]))
+            packageHash.insert(int(row[0]), Package(row[0], row[1], row[2], row[3], row[4],
+                                                        row[5], row[6], notes, 'Hub', row[8]))
+            #print(packageHash.search(row[0]))
     return packageHash

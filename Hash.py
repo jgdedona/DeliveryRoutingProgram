@@ -29,3 +29,12 @@ class HashMap:
                     bucket_list.pop(i)
                     return True
         return False
+
+    def __len__(self):
+        return len(self.table)
+
+    def __getitem__(self, key):
+        return self.table[key]
+
+    def __setitem__(self, key, value):
+        self.table[key] = value
