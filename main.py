@@ -19,12 +19,8 @@ if __name__ == '__main__':
             else:
                 truck_one_iteration_two.add_package(package_hash[i][j][1])
 
-    truck_list1 = [package.address for package in truck_one]
-    truck_list2 = [package.address for package in truck_two]
-    truck_list3 = [package.address for package in truck_one_iteration_two]
+    sum = Graph.nearest_neighbor_traversal(distance_graph, truck_one) + \
+          Graph.nearest_neighbor_traversal(distance_graph, truck_two) + \
+          Graph.nearest_neighbor_traversal(distance_graph, truck_one_iteration_two)
 
-    sum = Graph.nearest_neighbor_traversal(distance_graph, truck_list1) + \
-          Graph.nearest_neighbor_traversal(distance_graph, truck_list2) + \
-          Graph.nearest_neighbor_traversal(distance_graph, truck_list3)
-
-    print(sum)
+    print(truck_two.miles)

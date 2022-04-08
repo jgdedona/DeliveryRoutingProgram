@@ -51,11 +51,12 @@ def create_distance_graph(csv_file):
 
 
 # O(n^2) for time complexity, O(1) for space
-def nearest_neighbor_traversal(distance_graph, vertex_list): # Need to change vertex_list to truck object and create list within the function
+def nearest_neighbor_traversal(distance_graph, truck_object):
     start_point = 'HUB'
     traveled_distance = 0.0
     min_distance = -1.0
     min_vertex = None
+    vertex_list = [package.address for package in truck_object]
 
     while len(vertex_list) > 1:
         for vertex in vertex_list:
@@ -70,6 +71,7 @@ def nearest_neighbor_traversal(distance_graph, vertex_list): # Need to change ve
         min_distance = -1.0
 
     traveled_distance += distance_graph.check_distance(start_point, 'HUB')
+    truck_object.miles = traveled_distance
 
     return traveled_distance
 
