@@ -20,6 +20,7 @@ class Package:
                    + ', ' + self.status + ', ' + self.truck)
 
 
+# O(n) for time and space
 def create_package_hash(csv_file):
     packageHash = Hash.HashMap()
 

@@ -4,11 +4,13 @@ class HashMap:
         for i in range(initialCapacity):
             self.table.append([])
 
+    # O(1) amortized for time, O(1) for space
     def insert(self, key, value):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
         bucket_list.append([key, value])
 
+    # O(n) for time, O(1) for space
     def search(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]
@@ -19,6 +21,7 @@ class HashMap:
                     return entry[1]
         return None
 
+    # O(n) for time, O(1) for space
     def delete(self, key):
         bucket = hash(key) % len(self.table)
         bucket_list = self.table[bucket]

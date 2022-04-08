@@ -18,13 +18,15 @@ class Graph:
         self.adjacency_list[vertex_a].append(vertex_b)
         self.adjacency_list[vertex_b].append(vertex_a)
 
+    # O(n) for time, O(1) for space
     def check_distance(self, vertex_a, vertex_b):
         key_check_tuple = (vertex_a, vertex_b)
-        for key in self.edge_weights:
-            if key_check_tuple == key:
-                return self.edge_weights[key_check_tuple]
+        if key_check_tuple in self.edge_weights:
+            return self.edge_weights[key_check_tuple]
+        print("Invalid vertices")
 
 
+# O(n^2) for time and space
 def create_distance_graph(csv_file):
     distance_graph = Graph()
 
@@ -41,14 +43,15 @@ def create_distance_graph(csv_file):
             if row_num > 0:
                 distance_graph.add_vertex(row[1].strip())
 
-                for i in range(row_num): # May need to remove the -1
+                for i in range(row_num):
                     distance_graph.add_undirected_edge(row[1].strip(), row_0[i], float(row[i+2]))
             row_num += 1
 
     return distance_graph
 
 
-def nearest_neighbor_traversal(distance_graph, vertex_list):
+# O(n^2) for time complexity, O(1) for space
+def nearest_neighbor_traversal(distance_graph, vertex_list): # Need to change vertex_list to truck object and create list within the function
     start_point = 'HUB'
     traveled_distance = 0.0
     min_distance = -1.0
