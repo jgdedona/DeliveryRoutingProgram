@@ -12,3 +12,7 @@ class Truck:
 
     def add_miles(self, miles):
         self.miles += miles
+
+    def __iter__(self):
+        return iter(self.packages)
+
