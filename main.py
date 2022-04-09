@@ -1,26 +1,15 @@
-import Graph
-import Packages
-import Truck
+import Simulation
+
 
 if __name__ == '__main__':
-    package_hash = Packages.create_package_hash('WGUPS Package File.csv')
-    distance_graph = Graph.create_distance_graph('WGUPS Distance Table.csv')
 
-    truck_one = Truck.Truck()
-    truck_two = Truck.Truck()
-    truck_one_iteration_two = Truck.Truck()
+    time_string = input("Please enter a time in the following 24 hour format: HH:MM:SS \n")
 
-    for i in range(len(package_hash)):
-        for j in range (len(package_hash[i])):
-            if package_hash[i][j][1].truck == 'truck_one':
-                truck_one.add_package(package_hash[i][j][1])
-            elif package_hash[i][j][1].truck == 'truck_two':
-                truck_two.add_package(package_hash[i][j][1])
-            else:
-                truck_one_iteration_two.add_package(package_hash[i][j][1])
 
-    sum = Graph.nearest_neighbor_traversal(distance_graph, truck_one) + \
-          Graph.nearest_neighbor_traversal(distance_graph, truck_two) + \
-          Graph.nearest_neighbor_traversal(distance_graph, truck_one_iteration_two)
+    truck_one_delivery = Simulation.nearest_neighbor_traversal(Simulation.truck_one, time_string)
+    Simulation.truck_one_iteration_two.time = Simulation.truck_one.time
+    print(Simulation.truck_one_iteration_two.time)
 
-    print(truck_two.miles)
+    truck_two_deliver = Simulation.nearest_neighbor_traversal(Simulation.truck_two, time_string)
+
+    truck_one_it_two_delivery = Simulation.nearest_neighbor_traversal(Simulation.truck_one_iteration_two, time_string)

@@ -3,7 +3,7 @@ import Hash
 
 class Package:
     def __init__(self, packageId, address, city, state, zip, deliveryDeadline, massKilo, notes, status, truck):
-        self.packagId = packageId
+        self.packageId = packageId
         self.address = address
         self.city = city
         self.state = state
@@ -15,7 +15,7 @@ class Package:
         self.truck = truck
 
     def __str__(self):
-        return str(self.packagId + ', ' + self.address + ', ' + self.city + ', ' + self.state + ', '
+        return str(self.packageId + ', ' + self.address + ', ' + self.city + ', ' + self.state + ', '
                    + self.zip + ', ' + self.deliveryDeadline + ', ' + self.massKilo + ', ' + self.notes
                    + ', ' + self.status + ', ' + self.truck)
 
