@@ -41,3 +41,6 @@ class HashMap:
 
     def __setitem__(self, key, value):
         self.table[key] = value
+
+    def __iter__(self):
+        return iter(self.table)
