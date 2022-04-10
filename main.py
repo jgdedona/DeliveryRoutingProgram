@@ -14,8 +14,7 @@ if __name__ == '__main__':
 
     while menu_selection != '4':
 
-        if menu_selection in ['1', '2', '3']:
-            time_string = input("Please enter a time in the following 24 hour format: HH:MM:SS \n")
+        time_string = input("Please enter a time in the following 24 hour format: HH:MM:SS \n")
 
         truck_one_delivery = Simulation.nearest_neighbor_traversal(Simulation.truck_one, time_string)
 

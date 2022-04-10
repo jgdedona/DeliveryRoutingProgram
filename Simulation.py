@@ -39,7 +39,7 @@ def nearest_neighbor_traversal(truck_object, time_string):
     min_vertex = None
     current_package = None
 
-    while len(truck_object.packages) > 1:
+    while len(truck_object.packages) > 0:
         for package in truck_object:
             distance = distance_graph.check_distance(start_point, package.address)
             if distance < min_distance or min_distance == -1.0:
