@@ -19,14 +19,14 @@
 19,177 W Price Ave,Salt Lake City,UT,84115,EOD,37,,truck_one
 20,3595 Main St,Salt Lake City,UT,84115,10:30 AM,37,"Must be delivered with 13, 15",truck_one
 21,3595 Main St,Salt Lake City,UT,84115,EOD,3,,truck_one
-22,6351 South 900 East,Murray,UT,84121,EOD,2,,truck_one
+22,6351 South 900 East,Murray,UT,84121,EOD,2,,truck_three
 23,5100 South 2700 West,Salt Lake City,UT,84118,EOD,5,,truck_one
 24,5025 State St,Murray,UT,84107,EOD,7,,truck_one
 25,5383 South 900 East #104,Salt Lake City,UT,84117,10:30 AM,7,Delayed on flight---will not arrive to depot until 9:05 am,truck_two
 26,5383 South 900 East #104,Salt Lake City,UT,84117,EOD,25,,truck_two
 27,1060 Dalton Ave S,Salt Lake City,UT,84104,EOD,5,,truck_two
 28,2835 Main St,Salt Lake City,UT,84115,EOD,7,Delayed on flight---will not arrive to depot until 9:05 am,truck_two
-29,1330 2100 S,Salt Lake City,UT,84106,10:30 AM,2,,truck_two
+29,1330 2100 S,Salt Lake City,UT,84106,10:30 AM,2,,truck_one
 30,300 State St,Salt Lake City,UT,84103,10:30 AM,1,,truck_two
 31,3365 S 900 W,Salt Lake City,UT,84119,10:30 AM,1,,truck_two
 32,3365 S 900 W,Salt Lake City,UT,84119,EOD,1,Delayed on flight---will not arrive to depot until 9:05 am,truck_two

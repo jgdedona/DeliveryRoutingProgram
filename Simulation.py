@@ -3,26 +3,21 @@ from datetime import date
 from datetime import time
 import Graph
 import Packages
-import Truck
 
-package_hash = Packages.create_package_hash('WGUPS Package File.csv')
 distance_graph = Graph.create_distance_graph('WGUPS Distance Table.csv')
 
-truck_one = Truck.Truck()
+def create_hash_table():
+    return Packages.create_package_hash('WGUPS Package File.csv')
 
-truck_two = Truck.Truck()
-truck_two.time = datetime.combine(date.today(), time.fromisoformat('09:05:00'))
-
-truck_one_iteration_two = Truck.Truck()
-
-for i in range(len(package_hash)):
-    for j in range(len(package_hash[i])):
-        if package_hash[i][j][1].truck == 'truck_one':
-            truck_one.add_package(package_hash[i][j][1])
-        elif package_hash[i][j][1].truck == 'truck_two':
-            truck_two.add_package(package_hash[i][j][1])
-        else:
-            truck_one_iteration_two.add_package(package_hash[i][j][1])
+def fill_truck_objects(package_hash, truck_one, truck_two, truck_one_iteration_two):
+    for i in range(len(package_hash)):
+        for j in range(len(package_hash[i])):
+            if package_hash[i][j][1].truck == 'truck_one':
+                truck_one.add_package(package_hash[i][j][1])
+            elif package_hash[i][j][1].truck == 'truck_two':
+                truck_two.add_package(package_hash[i][j][1])
+            else:
+                truck_one_iteration_two.add_package(package_hash[i][j][1])
 
 # O(n^2) for time complexity, O(1) for space
 def nearest_neighbor_traversal(truck_object, time_string):
