@@ -28,12 +28,14 @@ if __name__ == '__main__':
 
         time_string = input("Please enter a time in the following 24 hour format: HH:MM:SS \n")
 
-        truck_one_delivery = Simulation.nearest_neighbor_traversal(truck_one, time_string)
-
-        truck_two_delivery = Simulation.nearest_neighbor_traversal(truck_two, time_string)
-
-        truck_one_iteration_two.time = truck_one.time
-        truck_one_it_two_delivery = Simulation.nearest_neighbor_traversal(truck_one_iteration_two, time_string)
+        try:
+            truck_one_delivery = Simulation.nearest_neighbor_traversal(truck_one, time_string)
+            truck_two_delivery = Simulation.nearest_neighbor_traversal(truck_two, time_string)
+            truck_one_iteration_two.time = truck_one.time
+            truck_one_it_two_delivery = Simulation.nearest_neighbor_traversal(truck_one_iteration_two, time_string)
+        except ValueError:
+            print("Invalid time entry")
+            continue
 
         if menu_selection == '1':
             for package_list in package_hash:
@@ -50,7 +52,7 @@ if __name__ == '__main__':
                     key = input("Invalid ID. Please try again: ")
         elif menu_selection == '3':
             sum = truck_one_delivery + truck_two_delivery + truck_one_it_two_delivery
-            print(sum)
+            print(round(sum, 2))
 
         print('\n' + menu)
         menu_selection = input("Please select a menu item: ")

@@ -21,7 +21,7 @@
 21,3595 Main St,Salt Lake City,UT,84115,EOD,3,,truck_one
 22,6351 South 900 East,Murray,UT,84121,EOD,2,,truck_three
 23,5100 South 2700 West,Salt Lake City,UT,84118,EOD,5,,truck_one
-24,5025 State St,Murray,UT,84107,EOD,7,,truck_one
+24,5025 State St,Murray,UT,84107,EOD,7,,truck_three
 25,5383 South 900 East #104,Salt Lake City,UT,84117,10:30 AM,7,Delayed on flight---will not arrive to depot until 9:05 am,truck_two
 26,5383 South 900 East #104,Salt Lake City,UT,84117,EOD,25,,truck_two
 27,1060 Dalton Ave S,Salt Lake City,UT,84104,EOD,5,,truck_two
@@ -36,5 +36,5 @@
 36,2300 Parkway Blvd,West Valley City,UT,84119,EOD,88,Can only be on truck 2,truck_two
 37,410 S State St,Salt Lake City,UT,84111,10:30 AM,2,,truck_two
 38,410 S State St,Salt Lake City,UT,84111,EOD,9,Can only be on truck 2,truck_two
-39,2010 W 500 S,Salt Lake City,UT,84104,EOD,9,,truck_one
+39,2010 W 500 S,Salt Lake City,UT,84104,EOD,9,,truck_three
 40,380 W 2880 S,Salt Lake City,UT,84115,10:30 AM,45,,truck_one
