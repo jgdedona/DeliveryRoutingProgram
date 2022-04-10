@@ -19,7 +19,7 @@ class HashMap:
             for entry in bucket_list:
                 if entry[0] == key:
                     return entry[1]
-        return None
+        return "Package not found"
 
     # O(n) for time, O(1) for space
     def delete(self, key):

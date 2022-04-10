@@ -26,6 +26,7 @@ for i in range(len(package_hash)):
 
 # O(n^2) for time complexity, O(1) for space
 def nearest_neighbor_traversal(truck_object, time_string):
+
     if truck_object.time >= datetime.combine(date.today(), time.fromisoformat(time_string)):
         return 0
 
