@@ -41,7 +41,8 @@ if __name__ == '__main__':
             sum = truck_one_delivery + truck_two_delivery + truck_one_it_two_delivery
             print(sum)
 
-
+        print('\n' + menu)
+        menu_selection = input("Please select a menu item: ")
 
     exit()
 
