@@ -22,6 +22,23 @@ class Package:
 
 # O(n) for time and space
 def create_package_hash(csv_file):
+    """
+    create_package_hash:
+    This function utilizes a pre-formatted csv file to create a hash table data structure and populate
+    it with package data.
+
+    Args:
+    csv_file: This is a string argument that denotes the location of a pre-formatted csv file containing
+    package data.
+
+    Returns:
+    package_hash: This function returns a HashMap object.
+
+    Time complexity: Because the function iterates over each row exactly once, the time complexity is O(n).
+
+    Space complexity: Because each entry is stored in the data structure once,
+    the space complexity is O(n^2).
+    """
     packageHash = Hash.HashMap()
 
     with open(csv_file) as file:
@@ -34,5 +51,4 @@ def create_package_hash(csv_file):
                 notes = row[7]
             packageHash.insert(int(row[0]), Package(row[0], row[1], row[2], row[3], row[4],
                                                         row[5], row[6], notes, 'Hub', row[8]))
-            #print(packageHash.search(row[0]))
     return packageHash

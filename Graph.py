@@ -10,9 +10,11 @@ class Graph:
         self.adjacency_list = {}
         self.edge_weights = {}
 
+    # O(n) for time, O(1) for space
     def add_vertex(self, new_vertex):
         self.adjacency_list[new_vertex] = []
 
+    # O(n) for time, O(1) for space
     def add_undirected_edge(self, vertex_a, vertex_b, weight):
         self.edge_weights[(vertex_a, vertex_b)] = weight
         self.edge_weights[(vertex_b, vertex_a)] = weight
@@ -29,6 +31,24 @@ class Graph:
 
 # O(n^2) for time and space
 def create_distance_graph(csv_file):
+    """
+    create_distance_graph:
+    This function utilizes a pre-formatted csv file to create a graph data structure and populate
+    it with address and distance data.
+
+    Args:
+    csv_file: This is a string argument that denotes the location of a pre-formatted csv file containing address
+    and distance data.
+
+    Returns:
+    distance_graph: This function returns a Graph object.
+
+    Time complexity: Because functionFoo has nested for loops that operate on each input exactly twice,
+    it's time complexity is O(n^2).
+
+    Space complexity: Because each entry is stored in the data structure twice due to the nature
+    of undirected edges, the space complexity is O(n^2).
+    """
     distance_graph = Graph()
 
     with open(csv_file) as file:
