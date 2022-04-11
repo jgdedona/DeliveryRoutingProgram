@@ -1,5 +1,5 @@
 import csv
-import Hash
+import hash
 
 class Package:
     def __init__(self, packageId, address, city, state, zip, deliveryDeadline, massKilo, notes, status, truck):
@@ -39,7 +39,7 @@ def create_package_hash(csv_file):
     Space complexity: Because each entry is stored in the data structure once,
     the space complexity is O(n^2).
     """
-    packageHash = Hash.HashMap()
+    package_hash = hash.HashMap()
 
     with open(csv_file) as file:
         packageInfo = csv.reader(file, delimiter=',')
@@ -49,6 +49,6 @@ def create_package_hash(csv_file):
                 notes = 'None'
             else:
                 notes = row[7]
-            packageHash.insert(int(row[0]), Package(row[0], row[1], row[2], row[3], row[4],
+            package_hash.insert(int(row[0]), Package(row[0], row[1], row[2], row[3], row[4],
                                                         row[5], row[6], notes, 'Hub', row[8]))
-    return packageHash
+    return package_hash

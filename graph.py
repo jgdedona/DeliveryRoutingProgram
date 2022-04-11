@@ -5,6 +5,7 @@ class Vertex:
     def __init__(self, label):
         self.label = label
 
+
 class Graph:
     def __init__(self):
         self.adjacency_list = {}
