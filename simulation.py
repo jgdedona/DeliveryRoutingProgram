@@ -45,7 +45,7 @@ def fill_truck_objects(package_hash, truck_one, truck_two, truck_one_iteration_t
                 truck_one_iteration_two.add_package(package_hash[i][j][1])
 
 
-# O(n^2) for time complexity, O(1) for space
+# O(n^3) for time complexity, O(1) for space
 def nearest_neighbor_traversal(truck_object, time_string):
     """
     nearest_neighbor_traversal:
@@ -65,11 +65,11 @@ def nearest_neighbor_traversal(truck_object, time_string):
     by the time_string parameter.
 
     Time complexity: Because the function iterates over each entry in the truck object's package list
-    and performs a check_distance call (time complexity O(n)) every iteration, the time complexity
-    is O(n^2). It is worth noting that due to practical limitations, the size of the package list
-    for each truck object will never be greater than 16 in practice, and the average case of the
-    check_distance call is O(1), so the performance of this nearest neighbor implementation is
-    very efficient in most cases.
+    approximately n((n-0)+(n-1)+...(n-n)) times and performs a check_distance call (time complexity O(n))
+    every iteration, the time complexity is O(n^3). It is worth noting that due to practical limitations,
+    the size of the package list for each truck object will never be greater than 16 in practice, and the
+    average case of the check_distance call is O(1), so the performance of this nearest neighbor
+    implementation is O(n^2) in most cases.
 
     Space complexity: Because no significant additional storage allocations are required,
     the space complexity is O(1).
@@ -89,7 +89,7 @@ def nearest_neighbor_traversal(truck_object, time_string):
 
     while len(truck_object.packages) > 0:
         for package in truck_object:
-            distance = distance_graph.check_distance(start_point, package.address) # O(n) time complexity
+            distance = distance_graph.check_distance(start_point, package.address)
             if distance < min_distance or min_distance == -1.0:
                 min_distance = distance
                 min_vertex = package.address
