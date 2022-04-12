@@ -98,6 +98,7 @@ def nearest_neighbor_traversal(truck_object, time_string):
         truck_object.add_time(min_distance)
 
         if truck_object.time > datetime.combine(date.today(), time.fromisoformat(time_string)):
+            truck_object.miles = traveled_distance
             return traveled_distance
 
         truck_object.remove_package(current_package)
@@ -111,11 +112,3 @@ def nearest_neighbor_traversal(truck_object, time_string):
     truck_object.miles = traveled_distance
 
     return traveled_distance
-
-    # Start at hub
-    # Iterate through list to find nearest vertex
-    # travel to nearest vertex
-    # set current location to new vertex
-    # remove package containing vertex from list
-    # repeat steps two through five until list empty
-    # return to hub
