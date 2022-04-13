@@ -66,10 +66,10 @@ def nearest_neighbor_traversal(truck_object, time_string):
 
     Time complexity: Because the function iterates over each entry in the truck object's package list
     approximately n((n-0)+(n-1)+...(n-n)) times and performs a check_distance call (time complexity O(n))
-    every iteration, the time complexity is O(n^3). It is worth noting that due to practical limitations,
-    the size of the package list for each truck object will never be greater than 16 in practice, and the
-    average case of the check_distance call is O(1), so the performance of this nearest neighbor
-    implementation is O(n^2) in most cases.
+    every iteration against a separate graph data structure, the time complexity is O(mn^2). It is worth noting that due
+    to practical limitations, the size of the package list for each truck object will never be greater than 16 in
+    practice, and the average case of the check_distance call is O(1), so the performance of this
+    nearest neighbor implementation is O(n^2) in most cases.
 
     Space complexity: Because no significant additional storage allocations are required,
     the space complexity is O(1).

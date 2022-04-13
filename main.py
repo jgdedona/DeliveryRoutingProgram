@@ -32,7 +32,8 @@ if __name__ == '__main__':
 
         time_string = input("Please enter a time in the following 24 hour format: HH:MM:SS \n")
 
-        # O(n^2) for time, O(1) for space for every call of Simulation.nearest_neighbor_traversal in the try block
+        # O(n^2) average case for time, O(1) for space for every call of Simulation.nearest_neighbor_traversal in the
+        # try block
         try:
             truck_one_delivery = simulation.nearest_neighbor_traversal(truck_one, time_string)
             truck_two_delivery = simulation.nearest_neighbor_traversal(truck_two, time_string)
