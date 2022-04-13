@@ -1,6 +1,6 @@
 class HashMap:
     # O(n) for time and space
-    def __init__(self, initialCapacity=10):
+    def __init__(self, initialCapacity=41):
         self.table = []
         for i in range(initialCapacity):
             self.table.append([])
