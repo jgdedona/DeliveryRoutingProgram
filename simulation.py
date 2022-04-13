@@ -102,7 +102,7 @@ def nearest_neighbor_traversal(truck_object, time_string):
             return traveled_distance
 
         truck_object.remove_package(current_package)
-        current_package.status = 'Delivered'
+        current_package.status = 'Delivered at: ' + str(truck_object.time)
 
         start_point = min_vertex
         traveled_distance += min_distance
