@@ -22,6 +22,9 @@ if __name__ == '__main__':
     # Continues to re-run the program until option 4 (exit) is selected
     while menu_selection != '4':
 
+        while menu_selection not in ['1', '2', '3', '4']:
+            menu_selection = input('Invalid selection. Please try again: ')
+
         # O(n) for time and space
         package_hash = simulation.create_hash_table()
 
