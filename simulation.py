@@ -16,7 +16,7 @@ def create_hash_table():
 # O(n) for time, O(1) for space
 def fill_truck_objects(package_hash, truck_one, truck_two, truck_one_iteration_two):
     """
-    create_distance_graph:
+    fill_truck_objects:
     This function requires an existing hash table and three existing truck objects. It utilizes the package_hash
     to fill the truck objects' package lists.
 
@@ -45,7 +45,7 @@ def fill_truck_objects(package_hash, truck_one, truck_two, truck_one_iteration_t
                 truck_one_iteration_two.add_package(package_hash[i][j][1])
 
 
-# O(n^3) for time complexity, O(1) for space
+# O(mn^2) for time complexity, O(1) for space
 def nearest_neighbor_traversal(truck_object, time_string):
     """
     nearest_neighbor_traversal:
