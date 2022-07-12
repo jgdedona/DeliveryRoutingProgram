@@ -28,7 +28,7 @@ class HashMap:
         bucket_list = self.table[bucket]
 
         if len(bucket_list) > 0:
-            for i in len(bucket_list):
+            for i in range(len(bucket_list)):
                 if bucket_list[i][0] == key:
                     bucket_list.pop(i)
                     return True
@@ -38,10 +38,7 @@ class HashMap:
         return len(self.table)
 
     def __getitem__(self, key):
-        return self.table[key]
-
-    def __setitem__(self, key, value):
-        self.table[key] = value
+        return self.table[hash(key) % len(self.table)]
 
     def __iter__(self):
         return iter(self.table)
